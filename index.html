@@ -237,7 +237,7 @@
         .hero {
             background: 
                 linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
-                url('https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link');
+                url('images/backgrounds/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -742,51 +742,69 @@
         }
         
         .testimonial-slider {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
         }
         
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
         .testimonial {
             text-align: center;
-            padding: 50px 40px;
+            padding: 40px 30px;
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.7));
             border-radius: var(--border-radius);
-            margin: 0 20px;
             box-shadow: var(--shadow);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
         
         .testimonial-text {
             font-style: italic;
             margin-bottom: 25px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             position: relative;
         }
         
         .testimonial-text::before, .testimonial-text::after {
             content: '"';
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--accent-gold);
             position: absolute;
             opacity: 0.5;
         }
         
         .testimonial-text::before {
-            top: -20px;
-            left: -15px;
+            top: -15px;
+            left: -10px;
         }
         
         .testimonial-text::after {
-            bottom: -40px;
-            right: -15px;
+            bottom: -30px;
+            right: -10px;
         }
         
         .testimonial-author {
             font-weight: 600;
             font-size: 1.1rem;
             color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            font-style: italic;
         }
         
         /* CTA Section */
@@ -805,7 +823,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link');
+            background: url('images/backgrounds/cta-bg.jpg');
             background-size: cover;
             background-position: center;
             opacity: 0.1;
@@ -1009,6 +1027,10 @@
             .section-title h2 {
                 font-size: 2.2rem;
             }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1041,7 +1063,7 @@
             <p class="fade-in">Premium custom canvases, unique clocks, and personalized portraits crafted with precision to bring your vision to life.</p>
             <div class="hero-buttons fade-in">
                 <a href="#products" class="btn btn-primary">Explore Collection</a>
-                <a href="#order" class="btn btn-secondary">Commission Artwork</a>
+                <a href="#order" class="btn btn-secondary">Order Now</a>
             </div>
         </div>
     </section>
@@ -1054,9 +1076,10 @@
                 <p>Discover our range of premium custom art and decor solutions</p>
             </div>
             <div class="products-grid">
+                <!-- Product 1: Custom Canvases -->
                 <div class="product-card fade-in">
                     <div class="product-image" onclick="openModal('modal1')">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Custom Canvas">
+                        <img src="images/products/canvas-main.jpg" alt="Custom Canvas">
                     </div>
                     <div class="product-content">
                         <h3>Custom Canvases</h3>
@@ -1064,9 +1087,11 @@
                         <a href="#order" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
+
+                <!-- Product 2: Canvas Clocks -->
                 <div class="product-card fade-in">
                     <div class="product-image" onclick="openModal('modal2')">
-                        <img src="hhttps://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Canvas Clock">
+                        <img src="images/products/clock-main.jpg" alt="Canvas Clock">
                     </div>
                     <div class="product-content">
                         <h3>Custom Canvas Clocks</h3>
@@ -1074,9 +1099,11 @@
                         <a href="#order" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
+
+                <!-- Product 3: Magic Portraits -->
                 <div class="product-card fade-in">
                     <div class="product-image" onclick="openModal('modal3')">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Magic Portrait">
+                        <img src="images/products/portrait-main.jpg" alt="Magic Portrait">
                     </div>
                     <div class="product-content">
                         <h3>Magic Portraits</h3>
@@ -1084,9 +1111,11 @@
                         <a href="#order" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
+
+                <!-- Product 4: Snap Frames -->
                 <div class="product-card fade-in">
                     <div class="product-image" onclick="openModal('modal4')">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Snap Frame">
+                        <img src="images/products/frame-main.jpg" alt="Snap Frame">
                     </div>
                     <div class="product-content">
                         <h3>Snap Frames</h3>
@@ -1094,9 +1123,11 @@
                         <a href="#order" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
+
+                <!-- Product 5: Canvas Whiteboards -->
                 <div class="product-card fade-in">
                     <div class="product-image" onclick="openModal('modal5')">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Canvas Whiteboard">
+                        <img src="images/products/whiteboard-main.jpg" alt="Canvas Whiteboard">
                     </div>
                     <div class="product-content">
                         <h3>Canvas Whiteboards</h3>
@@ -1104,9 +1135,11 @@
                         <a href="#order" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
+
+                <!-- Product 6: Wallpaper Portraits -->
                 <div class="product-card fade-in">
                     <div class="product-image" onclick="openModal('modal6')">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Wallpaper Portrait">
+                        <img src="images/products/wallpaper-main.jpg" alt="Wallpaper Portrait">
                     </div>
                     <div class="product-content">
                         <h3>Wallpaper Portraits</h3>
@@ -1114,9 +1147,11 @@
                         <a href="#order" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
+
+                <!-- Product 7: Aluminium Frames -->
                 <div class="product-card fade-in">
                     <div class="product-image" onclick="openModal('modal7')">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Aluminium Frame">
+                        <img src="images/products/aluminium-main.jpg" alt="Aluminium Frame">
                     </div>
                     <div class="product-content">
                         <h3>Aluminium Frames</h3>
@@ -1124,9 +1159,11 @@
                         <a href="#order" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
+
+                <!-- Product 8: Canvas Paintings -->
                 <div class="product-card fade-in">
                     <div class="product-image" onclick="openModal('modal8')">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Canvas Painting">
+                        <img src="images/products/painting-main.jpg" alt="Canvas Painting">
                     </div>
                     <div class="product-content">
                         <h3>Canvas Paintings</h3>
@@ -1139,19 +1176,20 @@
     </section>
 
     <!-- Image Modals with Carousels -->
+    <!-- Modal 1: Custom Canvases -->
     <div id="modal1" class="modal">
         <span class="close" onclick="closeModal('modal1')">&times;</span>
         <div class="modal-content">
             <div class="carousel-container">
                 <div class="carousel-slides" id="carousel1">
                     <div class="carousel-slide active">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Custom Canvas 1">
+                        <img src="images/products/canvas-1.jpg" alt="Custom Canvas 1">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Custom Canvas 2">
+                        <img src="images/products/canvas-2.jpg" alt="Custom Canvas 2">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://drive.google.com/file/d/13CJwT24La_A8G1v8eDZBIQUq1iVprcxT/view?usp=drive_link" alt="Custom Canvas 3">
+                        <img src="images/products/canvas-3.jpg" alt="Custom Canvas 3">
                     </div>
                 </div>
             </div>
@@ -1166,20 +1204,21 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Modal 2: Canvas Clocks -->
     <div id="modal2" class="modal">
         <span class="close" onclick="closeModal('modal2')">&times;</span>
         <div class="modal-content">
             <div class="carousel-container">
                 <div class="carousel-slides" id="carousel2">
                     <div class="carousel-slide active">
-                        <img src="https://images.unsplash.com/photo-1508963493744-76fce69379c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Canvas Clock 1">
+                        <img src="images/products/clock-1.jpg" alt="Canvas Clock 1">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Canvas Clock 2">
+                        <img src="images/products/clock-2.jpg" alt="Canvas Clock 2">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Canvas Clock 3">
+                        <img src="images/products/clock-3.jpg" alt="Canvas Clock 3">
                     </div>
                 </div>
             </div>
@@ -1194,8 +1233,180 @@
             </div>
         </div>
     </div>
-    
-    <!-- Additional modals for other products would follow the same pattern -->
+
+    <!-- Modal 3: Magic Portraits -->
+    <div id="modal3" class="modal">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <div class="modal-content">
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carousel3">
+                    <div class="carousel-slide active">
+                        <img src="images/products/portrait-1.jpg" alt="Magic Portrait 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/portrait-2.jpg" alt="Magic Portrait 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/portrait-3.jpg" alt="Magic Portrait 3">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="changeSlide('carousel3', -1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide('carousel3', 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel3', 1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel3', 2)"></span>
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('carousel3', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Snap Frames -->
+    <div id="modal4" class="modal">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <div class="modal-content">
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carousel4">
+                    <div class="carousel-slide active">
+                        <img src="images/products/frame-1.jpg" alt="Snap Frame 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/frame-2.jpg" alt="Snap Frame 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/frame-3.jpg" alt="Snap Frame 3">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="changeSlide('carousel4', -1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide('carousel4', 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel4', 1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel4', 2)"></span>
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('carousel4', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Canvas Whiteboards -->
+    <div id="modal5" class="modal">
+        <span class="close" onclick="closeModal('modal5')">&times;</span>
+        <div class="modal-content">
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carousel5">
+                    <div class="carousel-slide active">
+                        <img src="images/products/whiteboard-1.jpg" alt="Canvas Whiteboard 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/whiteboard-2.jpg" alt="Canvas Whiteboard 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/whiteboard-3.jpg" alt="Canvas Whiteboard 3">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="changeSlide('carousel5', -1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide('carousel5', 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel5', 1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel5', 2)"></span>
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('carousel5', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: Wallpaper Portraits -->
+    <div id="modal6" class="modal">
+        <span class="close" onclick="closeModal('modal6')">&times;</span>
+        <div class="modal-content">
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carousel6">
+                    <div class="carousel-slide active">
+                        <img src="images/products/wallpaper-1.jpg" alt="Wallpaper Portrait 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/wallpaper-2.jpg" alt="Wallpaper Portrait 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/wallpaper-3.jpg" alt="Wallpaper Portrait 3">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="changeSlide('carousel6', -1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide('carousel6', 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel6', 1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel6', 2)"></span>
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('carousel6', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7: Aluminium Frames -->
+    <div id="modal7" class="modal">
+        <span class="close" onclick="closeModal('modal7')">&times;</span>
+        <div class="modal-content">
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carousel7">
+                    <div class="carousel-slide active">
+                        <img src="images/products/aluminium-1.jpg" alt="Aluminium Frame 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/aluminium-2.jpg" alt="Aluminium Frame 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/aluminium-3.jpg" alt="Aluminium Frame 3">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="changeSlide('carousel7', -1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide('carousel7', 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel7', 1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel7', 2)"></span>
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('carousel7', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 8: Canvas Paintings -->
+    <div id="modal8" class="modal">
+        <span class="close" onclick="closeModal('modal8')">&times;</span>
+        <div class="modal-content">
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carousel8">
+                    <div class="carousel-slide active">
+                        <img src="images/products/painting-1.jpg" alt="Canvas Painting 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/painting-2.jpg" alt="Canvas Painting 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/products/painting-3.jpg" alt="Canvas Painting 3">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="changeSlide('carousel8', -1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide('carousel8', 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel8', 1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('carousel8', 2)"></span>
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('carousel8', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -1205,7 +1416,7 @@
                     <h2>Crafting Memories Since 2018</h2>
                     <p>Anno Canvas was founded with a singular vision: to transform precious memories into timeless works of art. Our team of skilled artisans combines traditional craftsmanship with modern techniques to create pieces that tell your unique story.</p>
                     <p>We believe that personalized art should be accessible without compromising on quality. Each piece is meticulously crafted using premium materials, ensuring your artwork stands the test of time while becoming a centerpiece of your space.</p>
-                    <a href="#order" class="btn btn-secondary">Start Your Project</a>
+                    <a href="#order" class="btn btn-secondary">Order Now</a>
                 </div>
                 <div class="about-image fade-in">
                     <i class="fas fa-paint-roller" style="font-size: 4rem;"></i>
@@ -1258,7 +1469,7 @@
     <section class="order" id="order">
         <div class="container">
             <div class="section-title">
-                <h2>Commission Your Artwork</h2>
+                <h2>Order Now</h2>
                 <p>Begin your custom art journey with us today</p>
             </div>
             <div class="order-container">
@@ -1267,7 +1478,7 @@
                         <i class="fab fa-whatsapp"></i>
                         <h3>WhatsApp Order</h3>
                         <p>Connect with us directly on WhatsApp for a personalized consultation and quick order processing.</p>
-                        <a href="https://wa.me/1234567890?text=Hi%20Anno%20Canvas%2C%20I%20would%20like%20to%20commission%20a%20custom%20artwork." class="btn btn-whatsapp">
+                        <a href="https://wa.me/1234567890?text=Hi%20Anno%20Canvas%2C%20I%20would%20like%20to%20order%20a%20custom%20artwork." class="btn btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> Start Conversation
                         </a>
                     </div>
@@ -1283,7 +1494,7 @@
                         <i class="fas fa-envelope"></i>
                         <h3>Email Inquiry</h3>
                         <p>Send us a detailed description of your project and we'll provide a customized proposal.</p>
-                        <a href="mailto:commission@annocanvas.com" class="btn btn-secondary">
+                        <a href="mailto:orders@annocanvas.com" class="btn btn-secondary">
                             <i class="fas fa-envelope"></i> Email Us
                         </a>
                     </div>
@@ -1299,10 +1510,51 @@
                 <h2>Client Testimonials</h2>
                 <p>Hear what our clients have to say about their experience</p>
             </div>
-            <div class="testimonial-slider">
+            <div class="testimonials-grid">
                 <div class="testimonial fade-in">
-                    <p class="testimonial-text">The custom canvas clock I commissioned exceeded all my expectations. The attention to detail and quality of craftsmanship is exceptional. It has become the centerpiece of my living room and a constant conversation starter.</p>
+                    <p class="testimonial-text">The custom canvas clock I ordered exceeded all my expectations. The attention to detail and quality of craftsmanship is exceptional. It has become the centerpiece of my living room and a constant conversation starter.</p>
                     <p class="testimonial-author">- Sarah Johnson</p>
+                    <p class="testimonial-role">Interior Designer</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">I ordered a magic portrait for my parents' anniversary, and it brought tears to their eyes. The transformation of our family photo into a beautiful artistic piece was magical. The quality is outstanding and the service was impeccable.</p>
+                    <p class="testimonial-author">- Michael Chen</p>
+                    <p class="testimonial-role">Satisfied Customer</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">As a gallery owner, I'm very particular about art quality. The custom canvas paintings I ordered from Anno Canvas are museum-quality. The colors are vibrant, the details are crisp, and the framing is perfect. Highly recommend!</p>
+                    <p class="testimonial-author">- Elena Rodriguez</p>
+                    <p class="testimonial-role">Gallery Owner</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">The wallpaper portrait transformed my entire office space. The scale was perfect, the image quality was crystal clear, and the installation was seamless. My clients always comment on how impressive it looks.</p>
+                    <p class="testimonial-author">- David Thompson</p>
+                    <p class="testimonial-role">Business Consultant</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">I've ordered multiple custom canvases for my home, and each one has been perfect. The team at Anno Canvas really understands how to bring out the best in every photo. The colors are always true to life and the canvas quality is premium.</p>
+                    <p class="testimonial-author">- Jennifer Williams</p>
+                    <p class="testimonial-role">Photography Enthusiast</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">The aluminium frames I ordered for my art collection are stunning. They provide such a professional, gallery-like finish to each piece. The attention to detail in the framing process is remarkable.</p>
+                    <p class="testimonial-author">- Robert Kim</p>
+                    <p class="testimonial-role">Art Collector</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">The canvas whiteboard I ordered for our conference room has been a game-changer. It's both functional and beautiful, adding an artistic touch to our meetings while being incredibly practical.</p>
+                    <p class="testimonial-author">- Amanda Peterson</p>
+                    <p class="testimonial-role">Office Manager</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">I was skeptical about ordering custom art online, but Anno Canvas made the process so easy. Their consultation was thorough, and the final product was even better than I imagined. Will definitely order again!</p>
+                    <p class="testimonial-author">- James Wilson</p>
+                    <p class="testimonial-role">First-time Customer</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">The snap frames are brilliant! So easy to assemble and they make changing out canvas prints a breeze. Perfect for someone like me who likes to rotate artwork seasonally.</p>
+                    <p class="testimonial-author">- Maria Garcia</p>
+                    <p class="testimonial-role">Home Decor Enthusiast</p>
                 </div>
             </div>
         </div>
@@ -1313,7 +1565,7 @@
         <div class="container">
             <h2 class="fade-in">Ready to Create Something Extraordinary?</h2>
             <p class="fade-in">Begin your custom art journey with a complimentary consultation and quote.</p>
-            <a href="#order" class="btn btn-primary fade-in">Start Your Project</a>
+            <a href="#order" class="btn btn-primary fade-in">Order Now</a>
         </div>
     </section>
 
@@ -1346,7 +1598,7 @@
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="#process"><i class="fas fa-chevron-right"></i> Our Process</a></li>
-                        <li><a href="#order"><i class="fas fa-chevron-right"></i> Commission Art</a></li>
+                        <li><a href="#order"><i class="fas fa-chevron-right"></i> Order Now</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
